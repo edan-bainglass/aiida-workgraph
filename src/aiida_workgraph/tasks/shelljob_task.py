@@ -163,6 +163,7 @@ def _build_shelljob_nodespec(
 def shelljob(
     *,
     command: str,
+    name: Optional[str] = None,
     arguments: Optional[List[str]] = None,
     nodes: Optional[Dict[str, Any]] = None,
     filenames: Optional[Dict[str, str]] = None,
@@ -179,7 +180,11 @@ def shelljob(
             outs = shelljob(command="date", arguments=["--iso-8601"])  # returns handle
             wg.run()
     """
-    spec = _build_shelljob_nodespec(outputs=outputs, parser_outputs=parser_outputs)
+    spec = _build_shelljob_nodespec(
+        identifier=name,
+        outputs=outputs,
+        parser_outputs=parser_outputs,
+    )
 
     handle = TaskHandle(spec)
     return handle(
