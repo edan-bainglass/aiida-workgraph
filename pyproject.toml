@@ -24,7 +24,7 @@ dependencies = [
   "node-graph-widget>=0.0.5",
   "aiida-core~=2.7.1",
   "cloudpickle",
-  "aiida-shell~=0.8",
+  "aiida-shell @ git+https://github.com/edan-bainglass/aiida-shell.git@premise-demo",
   "aiida-pythonjob==0.4.4",
   "jsonschema"
 ]
